@@ -28,12 +28,16 @@ for fruit in fruit_list:
 
 list1 = [1, 2, 4, 4, 5]
 list2 = [2, 4, 6, 8, 10]
+list_del = []
 
 print(list1, list2)
 
-for position in list1:
-    if position in list2:
-        list1.pop(list1.index(position))
+for li in list1:
+    if li not in list2:
+        list_del.append(li)
+list1 = list_del
+
+print(list_del)
 print("После удаления дубликатов - ", list1, list2)
 
 
