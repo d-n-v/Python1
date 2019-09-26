@@ -1,3 +1,5 @@
+import random
+
 # Задача-1:
 # Дан список фруктов.
 # Напишите программу, выводящую фрукты в виде нумерованного списка,
@@ -14,15 +16,27 @@
 # Подсказка: воспользоваться методом .format()
 
 fruit_list = ["яблоко", "банан", "абрикос", "персик"]
-i = 0
-while i < len(fruit_list):
-    print('{} {:>10}'.format(i+1, fruit_list[i]))
-    i += 1
+for fruit in fruit_list:
+    print('{} {:>10}'.format(fruit_list.index(fruit) + 1, fruit))
+
+
 
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [2, 4, 6, 8, 10]
+
+print(list1, list2)
+
+for position in list1:
+    if position in list2:
+        list1.pop(list1.index(position))
+print("После удаления дубликатов - ", list1, list2)
+
+
 
 
 # Задача-3:
