@@ -17,7 +17,7 @@ import random
 
 fruit_list = ["яблоко", "банан", "абрикос", "персик"]
 for fruit in fruit_list:
-    print('{} {:>10}'.format(fruit_list.index(fruit) + 1, fruit))
+    print('{} {:{align}{width}}'.format(fruit_list.index(fruit) + 1, fruit, align=">", width=len(fruit) + 10))
 
 
 
@@ -51,10 +51,9 @@ list_new = []
 for li in list3:
     if li % 2 == 0:
         new_item = li / 4
-        list_new.append(new_item)
     elif li % 2 != 0:
         new_item = li * 2
-        list_new.append(new_item)
+    list_new.append(new_item)
 
 print("Новый список:", list_new)
 

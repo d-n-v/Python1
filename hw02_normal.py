@@ -22,9 +22,9 @@ def get_date(date):
     month_list = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
            'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
     date_list = date.split('.')
-    return (day_list[int(date_list[0]) - 1] + ' ' +
-            month_list[int(date_list[1]) - 1] + ' ' +
-            date_list[2] + ' года')
+    day = day_list[int(date_list[0]) - 1]
+    month = month_list[int(date_list[1]) - 1]
+    return ('{a} {b} {c} года'.format(a = day, b = month, c = date_list[2]))
 
 
 # Задача-1:
@@ -79,16 +79,15 @@ list_items_unique = []
 buffer_value = 0
 
 for li in list_items:
-    if li not in list_buffer:
-        list_buffer.append(li)
-list_items_nodupl = list_buffer
+    if li not in list_items_nodupl:
+        list_items_nodupl.append(li)
 print(list_items_nodupl)
 
 
 for li1 in list_items:
     if li1 not in buffer_dict.keys():
-        buffer_dict[li1] = "1"
-    elif li1 in buffer_dict.keys():
+        buffer_dict[li1] = 1
+    else:
         buffer_dict[li1] = int(buffer_dict[li1]) + 1
 
 for li2 in buffer_dict:
