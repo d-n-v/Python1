@@ -23,5 +23,20 @@ for i in range(1, 10):
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
+allfiles_list = os.listdir(os.getcwd())
+current_dirs_list = []
+
+
+def finddirs(list1, list2):
+    for i in list1:
+        if os.path.isdir(i):
+            list2.append(i)
+
+
+finddirs(allfiles_list, current_dirs_list)
+print(current_dirs_list)
+
+
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
+
