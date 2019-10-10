@@ -1,6 +1,7 @@
 import os
 import sys
 from functions_for_normal import *
+import functions_for_normal
 print("sys.argv = ", sys.argv)
 
 # Задача-1:
@@ -28,9 +29,9 @@ do = {
 }
 
 try:
-    dir_name = sys.argv[2]
+    functions_for_normal.dir_name = sys.argv[2]
 except IndexError:
-    dir_name = None
+    functions_for_normal.dir_name = None
 
 
 try:

@@ -1,5 +1,6 @@
 import os
-dir_name = 0
+dir_name = ""
+
 
 def print_help():
     print("1. Перейти в папку chdir <dir_name>")
@@ -21,7 +22,7 @@ def change_dir():
 
 
 def cur_dir():
-    os.listdir(os.getcwd())
+    print(os.listdir(os.getcwd()))
 
 
 def delete_dir():
