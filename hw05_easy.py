@@ -1,5 +1,6 @@
 import os
-
+import sys
+import shutil
 
 # Задача-1:
 # Напишите скрипт, создающий директории dir_1 - dir_9 в папке,
@@ -18,7 +19,7 @@ for i in range(1, 10):
     try:
         os.rmdir('{}{}{}'.format(dir_path, '_', i))
     except FileNotFoundError or OSError:
-        print("Невозможно удалить папку. Возможно, она не пустая")
+        print("Невозможно удалить папку. Вероятно, она не пустая")
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
@@ -40,3 +41,8 @@ print(current_dirs_list)
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
+thisfile = os.path.basename(__file__).split('.')
+filename = thisfile[0]
+
+if __name__ == "__main__":
+    shutil.copyfile(os.path.basename(__file__), "{}{}{}".format(filename, "_copy", ".py"))
